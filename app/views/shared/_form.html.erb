@@ -2,10 +2,10 @@
   <div class="col-md-12 col-md-offset-3">
     <form class="form-inline" role="form">
         <div class="form-group nested-group">
-            <input type="text" id="left-input" class="form-control" placeholder="Ville">
-            <input type="datetime" id="middle-input" class="form-control" placeholder="Check-in">
-            <input type="datetime" id="middle-input" class="form-control" placeholder="Check-out">
-            <input type="number" min="0" step="1" id="right-input" class="form-control" placeholder="Voyageurs">
+            <input type="text" class="form-control" placeholder="Ville">
+            <input placeholder="Check-in" type="text" onfocus="(this.type='date')" id="date" class="form-control">
+            <input placeholder="Check-out" type="text" onfocus="(this.type='date')" id="date" class="form-control">
+            <input placeholder="Voyageurs" type="text" onfocus="(this.type='number')" id="traveller" class="form-control" min="0" step="1">
             <button class="btn btn-primary" type="button">Rechercher</button>
         </div>
     </form>
