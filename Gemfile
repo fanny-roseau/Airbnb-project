@@ -7,6 +7,9 @@ gem 'rails', '4.2.1'
 gem 'devise'
 
 gem 'figaro'
+
+gem 'aws-sdk', '< 2.0'
+gem 'paperclip'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
