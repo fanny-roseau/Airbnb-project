@@ -1,5 +1,5 @@
 class Flat < ActiveRecord::Base
-  belongs_to :users
+  belongs_to :user
 
   validate :property_type, presence: true, inclusion: {in:["appartement", "maison"]}
   validate :room_type, presence: true, inclusion: {in:["logement entier", "chambre privée", "chambre partagée"]}
