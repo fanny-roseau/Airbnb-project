@@ -4,6 +4,8 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :first_name, placeholder: 'Prénom', required: true, autofocus: true, label: false, input_html: { class: 'decorative-input-name' } %>
+    <%= f.input :last_name, placeholder: 'Nom', required: true, label: false, input_html: { class: 'decorative-input-name' } %>
     <%= f.input :email, required: true, autofocus: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -13,6 +15,15 @@
     <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
     <%= f.input :password_confirmation, required: false %>
     <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+
+    <div>
+      <strong>Anniversaire</strong>
+    </div>
+    <div class="form-inline">
+    <%= f.input :birthday_month, collection: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"], required: true, prompt: "Mois", label: false, input_html: { class: 'decorative-input-date size-box-month' } %>
+    <%= f.input :birthday_day, collection: 1..31, required: true, prompt: "Jour", label: false, input_html: { class: 'decorative-input-date size-box-day' } %>
+    <%= f.input :birthday_year, collection: 1895..2015, required: true, prompt: "Année", label: false, input_html: { class: 'decorative-input-date size-box-year' } %>
+    </div>
   </div>
 
   <div class="form-actions">
