@@ -1,4 +1,13 @@
-.decorative-input {
+.sign-in-box {
+
+  padding: 20px;
+  height: 450px;
+  width: 300px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+.decorative-input-name {
   background-image: url(https://a2.muscache.com/airbnb/static/signinup/text-field-icons-9c18e4e23864cb33a8f0f7c32c0b86ee.png);
   background-repeat: no-repeat;
   background-position: right 11px;
@@ -10,3 +19,77 @@
   padding: 10px;
   width: 100% !important;
 }
+
+.decorative-input-email {
+
+  background-image: url(https://a2.muscache.com/airbnb/static/signinup/text-field-icons-9c18e4e23864cb33a8f0f7c32c0b86ee.png);
+  background-repeat: no-repeat;
+  background-position: right -33px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  font-size: 14px;
+  height: 40px;
+  padding: 10px;
+  width: 100% !important;
+}
+
+.decorative-input-password {
+
+  background-image: url(https://a2.muscache.com/airbnb/static/signinup/text-field-icons-9c18e4e23864cb33a8f0f7c32c0b86ee.png);
+  background-repeat: no-repeat;
+  background-position: right -77px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  font-size: 14px;
+  height: 40px;
+  padding: 10px;
+  width: 100% !important;
+}
+
+.decorative-input-date {
+
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 2em;
+  -webkit-appearance: none;
+  display: block;
+  padding: 8px 10px;
+  border: 1px solid #c4c4c4;
+  border-radius: 2px;
+  background-color: #fff;
+  color: #565a5c;
+  line-height: normal;
+}
+
+.size-box-year {
+  height: 36px;
+  width: 81px;
+}
+
+.size-box-month {
+  height: 36px;
+  width: 108px;
+}
+
+.size-box-day {
+  height: 36px;
+  width: 69px;
+}
+
+.btn-primary.btn {
+  border-color: #ff5a5f;
+  border-bottom-color: #e00007;
+  background-color: #ff5a5f;
+  color: #fff;
+}
+
+.btn-block {
+  display: block;
+  white-space: normal;
+  width: 100%;
+  margin-top:10px;
+}
+
+
