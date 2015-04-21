@@ -12,7 +12,7 @@
 <h1>Bonjour, je m'appelle <%= @user.first_name %> !</h1>
 
 
-<%= link_to "Modifier le profil", edit_user_path(current_user)%> <br><br><br>
+<%= link_to "Modifier le profil", edit_user_registration_path(current_user)%> <br><br><br>
 <p><%= @user.description %></p>
 </div>
 

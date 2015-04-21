@@ -1,7 +1,7 @@
 /* -------------------------------------
  * Colors & Fonts
  * ------------------------------------- */
-$navbar-color: $gray-light;
+$navbar-color: white;
 $navbar-hover-color: $yellow;
 $navbar-font-family: $navbar-font;
 $navbar-font-size: 14px;
@@ -17,7 +17,7 @@ $navbar-bg: white;
 $navbar-height: 40px;
 $navbar-vertical-padding: 10px;
 $navbar-horizontal-padding: 20px;
-$navbar-border-bottom-width: 1px;
+$navbar-border-bottom-width: 0px;
 $navbar-border-bottom-color: $gray-lighter;
 
 /* -------------------------------------
@@ -52,6 +52,7 @@ $navbar-profile-border-width: 2px;
   border-bottom: $navbar-border-bottom-width solid $navbar-border-bottom-color;
   min-height: 0;
   transition: background 0.4s ease;
+  z-index:1;
 
   .navbar-nav > li > a,
   .navbar-nav > .open > a,

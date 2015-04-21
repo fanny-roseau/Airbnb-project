@@ -1,5 +1,35 @@
 #banner {
+  margin-top:-100px;
   background-image: url(flat_banniere.jpg);
-  width: 1440px;
-  height: 600px;
+  width: 100%;
+  height: 650px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#position-search {
+  padding-top:50px;
+  padding-left:200px;
+}
+
+#home {
+
+padding-top:300px;
+
+h1 {
+
+font-size:60px;
+line-height:66px;
+color: white;
+
+}
+
+h2 {
+
+font-size:19px;
+line-height:18px;
+color: white;
+
+}
+
 }
