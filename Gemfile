@@ -6,6 +6,8 @@ gem 'rails', '4.2.1'
 
 gem 'devise'
 
+gem 'omniauth-facebook'
+
 gem 'figaro'
 
 gem 'aws-sdk', '< 2.0'
