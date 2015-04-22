@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
+  delete "flats/:id", to: "flats#destroy"
+
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    resources :flats, only:[:index, :create, :destroy, :new, :edit, :update]
+  end
   # You can have the root of your site routed with "root"
 
   root to: "home#index"

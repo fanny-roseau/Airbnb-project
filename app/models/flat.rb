@@ -1,12 +1,12 @@
 class Flat < ActiveRecord::Base
   belongs_to :user
 
-  validate :property_type, presence: true, inclusion: {in:["appartement", "maison"]}
-  validate :room_type, presence: true, inclusion: {in:["logement entier", "chambre privée", "chambre partagée"]}
-  validate :capacity, presence: true,
-  validate :city, presence: true,
-  validate :zip_code, presence: true,
-  validate :street, presence: true,
-  validate :price,presence: true,
+  validates :property_type, presence: true, inclusion: {in:["appartement", "maison"]}
+  validates :room_type, presence: true, inclusion: {in:["logement entier", "chambre privée", "chambre partagée"]}
+  validates :capacity, presence: true
+  validates :city, presence: true
+  validates :zip_code, presence: true
+  validates :street, presence: true
+  validates :price,presence: true
 
 end
