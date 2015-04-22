@@ -1,35 +1,23 @@
 #banner {
-  margin-top:-100px;
+  position: absolute;
+  padding-top: 300px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   background-image: url(surfhouse.jpg);
-  width: 100%;
-  height: 650px;
   background-repeat: no-repeat;
   background-size: cover;
-}
 
-#position-search {
-  padding-top:50px;
-  padding-left:200px;
-}
+  h1 {
+    font-size:60px;
+    line-height:66px;
+    color: white;
+  }
 
-#home {
-
-padding-top:300px;
-
-h1 {
-
-font-size:60px;
-line-height:66px;
-color: white;
-
-}
-
-h2 {
-
-font-size:19px;
-line-height:18px;
-color: white;
-
-}
-
+  h2 {
+    font-size:19px;
+    line-height:18px;
+    color: white;
+  }
 }
