@@ -1,22 +1,23 @@
 <div class="container">
+  <div class="row">
+    <div <div class="col-md-4">
+      <%= image_tag @user.picture.url(:medium), class: "img-size" %> <br> <br>
+      <%= link_to "Modifier le profil", edit_user_registration_path(current_user)%>
+    </div>
 
-  <div class="col-lg-3">
-    <br>
-    <%= image_tag @user.picture.url(:medium), class: "img-size" %> <br>
-    <%= link_to "Modifier le profil", edit_user_registration_path(current_user)%>
+    <div div class="col-md-8">
+      <h2>Bonjour, je m'appelle <%= @user.first_name %> !</h2>
+      <br>
+      <p> <strong>Membre depuis : </strong> <%= @user.created_at %> </p>
+      <p> <strong>Né le : </strong>
+        <%= @user.birthday_day %>
+        <%= @user.birthday_month %>
+        <%= @user.birthday_year %>
+      </p>
+      <p><strong>A propos de moi : </strong></p>
+      <p><%= @user.description %></p>
+    </div>
   </div>
-
-  <div class="col-lg-9">
-
-    <h1>Bonjour, je m'appelle <%= @user.first_name %> !</h1>
-
-    <p> <strong>Membre depuis : </strong><%= @user.created_at %> </p>
-    <p> <strong>Né le : </strong><%= @user.birthday_day %>  <%= @user.birthday_month %>
-        <%= @user.birthday_year %></p>
-
-    <p><%= @user.description %></p>
-  </div>
-
 </div>
 
 
