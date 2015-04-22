@@ -61,9 +61,11 @@
             <%= link_to t(".sign_in", default: "Connexion"), new_user_session_path %>
           </li>
         <% end %>
+        <% if current_user %>
         <li>
           <%= link_to t(".top_call_to_action", default: "Publier une annonce"), new_user_flat_path(current_user), class: "btn btn-default btn-xs" %>
         </li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

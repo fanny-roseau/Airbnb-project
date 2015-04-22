@@ -24,11 +24,11 @@ class FlatsController < ApplicationController
   end
 
   def edit
-    @flat = current_user.flats.find(params[:id])
+    @flat = @current_user.flats.find(params[:id])
   end
 
   def update
-    @flat = current_user.flats.find(params[:id])
+    @flat = @current_user.flats.find(params[:id])
     @flat.update(flat_params)
     redirect_to flat_path(@flat)
   end
@@ -41,7 +41,7 @@ class FlatsController < ApplicationController
   private
 
   def find_flat
-    @flat = Flat.find(params[:user_id])
+    @flat = Flat.find(params[:id])
   end
 
   def flat_params
