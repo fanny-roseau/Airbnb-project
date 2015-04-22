@@ -59,5 +59,7 @@ group :development, :test do
 
   gem 'binding_of_caller'
 
+  gem "letter_opener", group: :development
+
 end
 
