@@ -1,7 +1,21 @@
 .form-flat {
   padding: 20px;
-  height: 500px;
   width: 400px;
   background-color: white;
   margin: 0 auto;
+}
+
+
+#myflats  {
+
+  li {
+    list-style-type: none;
+  }
+
+  .flat-card {
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    display: inline-block;
+  }
 }
