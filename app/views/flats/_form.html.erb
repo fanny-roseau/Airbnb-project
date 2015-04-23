@@ -2,7 +2,7 @@
 
 <div class="form-inputs form-flat">
 
-     <%= simple_form_for(@flat, url: user_flats_path,  html: { multipart: true }) do |f| %>
+     <%= simple_form_for([current_user, @flat],  html: { multipart: true }) do |f| %>
 
         <%= f.input :property_type, prompt: "Type de propriété",
             collection: ["Appartement", "Maison"],
