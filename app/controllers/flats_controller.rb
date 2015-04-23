@@ -32,7 +32,7 @@ class FlatsController < ApplicationController
   def update
     @flat = current_user.flats.find(params[:id])
     @flat.update(flat_params)
-    redirect_to flat_path(@flat)
+    redirect_to user_flats_path(@flat)
   end
 
   def destroy
