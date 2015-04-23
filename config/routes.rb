@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   resources :users, only: [:show] do
-    resources :flats, only:[:index, :create, :destroy, :new, :edit, :update]
+    resources :flats, only:[:index, :show, :create, :destroy, :new, :edit, :update]
+      collection do
+        get 'search', to: "flats#search"
+      end
   end
   # You can have the root of your site routed with "root"
 
