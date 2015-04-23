@@ -57,14 +57,19 @@
           <li>
             <%= link_to t(".sign_up", default: "Inscription"), new_user_registration_path %>
           </li>
+          <!-- Regular login -->
           <li>
             <%= link_to t(".sign_in", default: "Connexion"), new_user_session_path %>
           </li>
+          <li>
+            <%= link_to "Connect with Facebook", user_omniauth_authorize_path(:facebook) %>
+          </li>
         <% end %>
+        <!-- Facebook login -->
         <% if current_user %>
-        <li>
-          <%= link_to t(".top_call_to_action", default: "Publier une annonce"), new_user_flat_path(current_user), class: "btn btn-default btn-xs" %>
-        </li>
+          <li>
+            <%= link_to t(".top_call_to_action", default: "Publier une annonce"), new_user_flat_path(current_user), class: "btn btn-default btn-xs" %>
+          </li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->

@@ -67,5 +67,7 @@ group :development, :test do
 
   gem "letter_opener", group: :development
 
+  gem "geocoder"
+
 end
 

@@ -1,19 +1,21 @@
 .form-flat {
   padding: 20px;
-  width: 400px;
+  width: 440px;
   background-color: white;
   margin: 0 auto;
 }
 
 
 #myflats  {
-
   li {
     list-style-type: none;
   }
 
+  }
+
   .flat-card {
     background-color: white;
+    width: 440px;
     padding: 20px;
     margin: 20px;
     display: inline-block;
@@ -23,3 +25,4 @@
 body {
   padding-top: 60px;
 }
+

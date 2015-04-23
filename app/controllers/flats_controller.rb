@@ -40,7 +40,7 @@ class FlatsController < ApplicationController
   end
 
   def search
-    @flats = Flat.where(city:params[:destination], capacity:params[:travellers_number])
+    @flats = Flat.where(city:params[:destination])
   end
 
   private
@@ -50,7 +50,7 @@ class FlatsController < ApplicationController
   end
 
   def flat_params
-    params.require(:flat).permit(:property_type, :room_type, :capacity, :city, :zip_code, :street, :price, :picture)
+    params.require(:flat).permit(:property_type, :presentation, :room_type, :capacity, :city, :zip_code, :street, :price, :picture)
   end
 
 end
