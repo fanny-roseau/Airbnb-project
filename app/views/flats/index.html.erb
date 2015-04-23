@@ -1,0 +1,21 @@
+<h1 class = "text-center"> Here my flats</h1>
+<div id = "myflats">
+  <div class="container">
+    <div class="row">
+          <ul>
+            <% @flats.each do |flat| %>
+              <li class = "flat-card">
+                <%= image_tag flat.picture.url(:medium) %>
+                <p><strong>Propriété : </strong><%= flat.property_type %> - <%= flat.room_type %></p>
+                <p><strong> Nombre de personnes : </strong> <%= flat.capacity %></p>
+                <p><strong>Adresse : </strong><%= flat.street %> - <%= flat.zip_code %> <%= flat.city %></p>
+                <p><%= flat.presentation %></p>
+                <p><strong> Tarif : </strong><%= flat.price %> € / nuit</p>
+                <p><%= link_to "Modifier les informations", edit_user_flat_path(current_user, flat) %></p>
+                <p><%= link_to "Supprimer mon annonce", user_flats_path, method: :delete %></p>
+              </li>
+            <% end %>
+          </ul>
+    </div>
+  </div>
+</div>
