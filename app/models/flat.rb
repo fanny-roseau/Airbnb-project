@@ -1,6 +1,9 @@
 class Flat < ActiveRecord::Base
   belongs_to :user
 
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
   validates :property_type, presence: true, inclusion: {in:["Appartement", "Maison"]}
   validates :room_type, presence: true, inclusion: {in:["Logement entier", "Chambre privée", "Chambre partagée"]}
   validates :capacity, presence: true
