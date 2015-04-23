@@ -1,6 +1,7 @@
 class FlatsController < ApplicationController
 
   before_action :authenticate_user!
+  skip_before_action :authenticate_user!, :only => [:search]
   before_action :find_flat, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -24,11 +25,11 @@ class FlatsController < ApplicationController
   end
 
   def edit
-    @flat = @current_user.flats.find(params[:id])
+    @flat = current_user.flats.find(params[:id])
   end
 
   def update
-    @flat = @current_user.flats.find(params[:id])
+    @flat = current_user.flats.find(params[:id])
     @flat.update(flat_params)
     redirect_to flat_path(@flat)
   end
@@ -36,6 +37,10 @@ class FlatsController < ApplicationController
   def destroy
     @flat.destroy
     redirect_to user_flats_path(@flat)
+  end
+
+  def search
+    @flats = Flat.where(city:params[:destination], capacity:params[:travellers_number])
   end
 
   private

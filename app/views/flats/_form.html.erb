@@ -1,22 +1,23 @@
-        <h3 class="text-center">Publiez votre annonce</h3>
+<h3 class="text-center">Publiez votre annonce</h3>
 
 <div class="form-inputs form-flat">
 
      <%= simple_form_for(@flat, url: user_flats_path,  html: { multipart: true }) do |f| %>
 
-        <%= f.input :property_type, prompt: "appartement",
-            collection: ["appartement", "maison"],
+        <%= f.input :property_type, prompt: "Type de propriété",
+            collection: ["Appartement", "Maison"],
             required: true, autofocus: true, label: false %>
-        <%= f.input :room_type, prompt: "logement entier",
-            collection: ["logement entier", "chambre privée", "chambre partagée"],
+        <%= f.input :room_type, prompt: "Type de logement",
+            collection: ["Logement entier", "Chambre privée", "Chambre partagée"],
             required: true, label: false %>
-        <%= f.input :capacity, placeholder: 'Capacité', required: true, label: false %>
+        <%= f.input :capacity, placeholder: "Capacité d'acceuil", required: true, label: false %>
         <%= f.input :presentation, placeholder: 'Présentation', required: true, label: false %>
-        <%= f.input :street, placeholder: 'Street', required: true, label: false %>
+        <%= f.input :street, placeholder: 'Rue', required: true, label: false %>
         <%= f.input :zip_code, placeholder: 'Code postal', required: true, label: false %>
         <%= f.input :city, placeholder: 'Ville', required: true, label: false %>
         <%= f.input :price, placeholder: 'Tarif', required: true, label: false %>
-
+        <p>Add your pictures :</p>
+        <p><%= f.file_field :picture %></p>
         <%= f.button :submit, "Publier", class: "btn btn-primary btn-block", value: "Publier" %>
       <% end %>
 </div>
