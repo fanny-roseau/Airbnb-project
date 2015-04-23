@@ -1,13 +1,13 @@
 <div class="row">
   <div class="col-xs-12 col-md-12">
-    <form class="form-inline search-size" role="form">
-        <div class="form-group nested-group">
-            <input type="text" class="form-control" placeholder="Destination">
-            <input placeholder="Arrivée" type="text" onfocus="(this.type='date')" id="date" class="form-control">
-            <input placeholder="Départ" type="text" onfocus="(this.type='date')" id="date" class="form-control">
-            <input placeholder="Voyageurs" type="text" onfocus="(this.type='number')" id="traveller" class="form-control" min="0" step="1">
-            <button class="btn btn-primary" type="button">Rechercher</button>
-        </div>
-    </form>
+    <%= form_tag(search_users_path, method: :get, class: "form-inline search-size") do %>
+      <div class="form-group nested-group">
+          <input type="text" class="form-control" placeholder="Destination" name="destination">
+          <input placeholder="Arrivée" type="text" onfocus="(this.type='date')" name="date_starting" class="form-control">
+          <input placeholder="Départ" type="text" onfocus="(this.type='date')" name="date_finishing" class="form-control">
+          <input placeholder="Voyageurs" type="text" onfocus="(this.type='number')" name="travellers_number" class="form-control" min="0" step="1">
+          <input class="btn btn-primary" type="submit" value="Rechercher">
+      </div>
+    <% end %>
   </div>
 </div>
