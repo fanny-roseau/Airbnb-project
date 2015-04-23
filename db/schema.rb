@@ -11,12 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20150423130048) do
-
+ActiveRecord::Schema.define(version: 20150423181354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.date     "date_arrival"
+    t.date     "date_departure"
+    t.integer  "people_number"
+    t.boolean  "accepted"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "user_id"
+    t.integer  "flat_id"
+  end
 
   create_table "flats", force: :cascade do |t|
     t.string   "property_type"
@@ -36,7 +45,6 @@ ActiveRecord::Schema.define(version: 20150423130048) do
     t.datetime "picture_updated_at"
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "address"
   end
 
   create_table "users", force: :cascade do |t|

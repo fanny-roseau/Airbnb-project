@@ -12,7 +12,7 @@ gem 'omniauth-facebook'
 
 gem 'figaro'
 
- gem "geocoder"
+gem "geocoder"
 
 gem "gmaps4rails"
 
