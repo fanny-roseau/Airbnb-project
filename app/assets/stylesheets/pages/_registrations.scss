@@ -107,14 +107,14 @@
 }
 
 .banner-transparent {
-  opacity: 0.5;
   margin-top:-100px;
-  background-image: url(flat_banniere.jpg);
+  background-image: url(surfhouse.jpg);
   width: 100%;
   height: 650px;
   background-repeat: no-repeat;
   background-size: cover;
   padding-top:80px;
+  z-index:1;
 }
 
 

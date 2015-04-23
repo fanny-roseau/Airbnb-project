@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-xs-9">
+    </div>
+
+    <div class="col-xs-3">
+      <div class="row">
+        <div class="col-xd-12">
+          <div id="pricing">
+            <div id="price_amount" class="pull-left">
+              <%= @flat.price %>€
+            </div>
+            <div class="pull-right">
+              <div id="per_night">Par nuit</div>
+            </div>
+          </div>
+        </div>
+
+      <div class="panel-light">
+        <%= form_tag(new_user_booking_path, method: :get) do %>
+          <div class="col-xs-4">
+            <label for="name">Arrivée</label>
+            <input placeholder="Arrivée" type="text" onfocus="(this.type='date')" name="date_arrival" id="date_arrival" class="form-control">
+          </div>
+          <div class="col-xs-4">
+            <label for="name">Départ</label>
+            <input placeholder="Départ" type="text" onfocus="(this.type='date')" name="date_departure" class="form-control">
+          </div>
+          <div class="col-xs-4">
+            <label for="name">Voyageurs</label>
+            <input placeholder="Voyageurs" type="text" onfocus="(this.type='number')" name="people_number" class="form-control" min="0" step="1">
+          </div>
+          <div class="col-xs-12">
+            <tr>
+              <td>
+                <%= @flat.price %>€ x 3 nuits
+              </td>
+              <td >
+                <%= @flat.price * 3 %>
+              </td>
+            </tr>
+            </div>
+          <div class="col-xs-12">
+             <input class="btn btn-primary" type="submit" value="Réservez l'appartement">
+          </div>
+        <% end %>
+
+
+
+
+
+
+

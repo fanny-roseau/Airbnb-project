@@ -1,8 +1,8 @@
 class FlatsController < ApplicationController
 
   before_action :authenticate_user!
-  skip_before_action :authenticate_user!, :only => [:search]
-  before_action :find_flat, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, :only => [:search, :show]
+  before_action :find_flat, only: [:edit, :update, :destroy, :show]
 
   def index
     @flats = Flat.all
@@ -17,7 +17,6 @@ class FlatsController < ApplicationController
 
   def create
     @flat = current_user.flats.new(flat_params)
-    @flat.address = "#{params[:flat][:street]} #{params[:flat][:zip_code]} #{params[:flat][:city]}"
      if @flat.save
        redirect_to user_flats_path(@flat)
      else
@@ -41,7 +40,7 @@ class FlatsController < ApplicationController
   end
 
   def search
-    @flats = Flat.where(city:params[:destination])
+    @flats = Flat.where(city: params[:destination])
     @markers = Gmaps4rails.build_markers(@flats) do |flat, marker|
       marker.lat flat.latitude
       marker.lng flat.longitude
