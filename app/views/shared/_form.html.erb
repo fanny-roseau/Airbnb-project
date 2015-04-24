@@ -3,8 +3,8 @@
     <%= form_tag(search_users_path, method: :get, class: "form-inline search-size") do %>
       <div class="form-group nested-group">
           <input type="text" class="form-control" placeholder="Destination" name="destination">
-          <input placeholder="Arrivée" type="text" onfocus="(this.type='date')" name="date_starting" class="form-control">
-          <input placeholder="Départ" type="text" onfocus="(this.type='date')" name="date_finishing" class="form-control">
+          <input placeholder="Arrivée" type="text" data-provide='datepicker' name="date_starting" class="form-control">
+          <input placeholder="Départ" type="text" data-provide='datepicker' name="date_finishing" class="form-control">
           <input placeholder="Voyageurs" type="text" onfocus="(this.type='number')" name="travellers_number" class="form-control" min="0" step="1">
           <input class="btn btn-primary" type="submit" value="Rechercher">
       </div>
