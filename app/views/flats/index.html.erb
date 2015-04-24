@@ -1,18 +1,23 @@
-<div id = "myflats">
-  <h1 class = "text-center">SurfHouses</h1>
+<div class="text-center separation">
+  <h1>SurfHouses</h1>
+</div>
+  <div id = "myflats">
+
     <div class="container">
       <div class="row">
             <ul>
               <% @flats.each do |flat| %>
               <div class="col-xs-12 col-md-4">
                 <li class = "flat-card">
-                    <div class="flat-picture" style="background-image: url(<%= asset_path flat.picture.url(:medium) %>); height: 300px; background-size: cover;">
-                    </div>
+
+                  <%= image_tag flat.picture.url(:medium) %>
                     <div class="flat-card-text">
-                      <p><strong><%= flat.title %></strong></p>
-                      <p><strong>Propriété : </strong><%= flat.property_type %> - <%= flat.room_type %></p>
+                      <p><strong><%= flat.title %> - <%= flat.price %>€/nuit</strong></p>
+                      <p><%= flat.city %></p>
+                      <p><%= flat.property_type %> - <%= flat.room_type %></p>
                       <p><%= link_to "Modifier les informations", edit_user_flat_path(current_user, flat) %></p>
-                      <p><%= link_to "Supprimer cette annonce", user_flat_path(current_user, flat), method: :delete %></p>
+                      <p><%= link_to "Supprimer mon annonce", user_flat_path(current_user, flat), method: :delete %></p>
+
                     </div>
                   </li>
                 </div>
@@ -20,4 +25,8 @@
             </ul>
       </div>
     </div>
+<<<<<<< HEAD
+  </div>
+=======
 </div>
+>>>>>>> master
