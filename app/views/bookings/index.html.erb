@@ -1,2 +1,69 @@
-<h1>Bookings#index</h1>
-<p>Find me in app/views/bookings/index.html.erb</p>
+<div class="panel-header">
+  <div class="row row-table">
+    <div class="col-6 col-middle">
+      Mes réservations
+    </div>
+  </div>
+</div>
+
+<table class="panel-body">
+  <tbody>
+    <tr>
+      <th>Statut</th>
+      <th>Dates et lieu</th>
+      <th>Voyageur</th>
+      <th>Détails</th>
+  </tr>
+  <% @bookings.each do |booking| %>
+   <tr>
+      <% if booking.accepted == true %>
+        <td>
+          <span class="label label-green label-success">Acceptée
+          </span>
+        </td>
+      <% else %>
+        <td>
+          <span class="label label-green label-success">En attente
+          </span>
+        </td>
+      <% end %>
+
+      <td>
+        <%= booking.date_arrival %> - <%= booking.date_departure %>
+      <br>
+        <%= link_to Flat.find(booking.flat_id)[:presentation], user_flat_path(booking.user_id, booking.flat_id) %>
+      <br>
+        <%= Flat.find(booking.flat_id)[:street] %>
+      <br>
+        <%= Flat.find(booking.flat_id)[:zip_code] %>
+      <br>
+        <%= Flat.find(booking.flat_id)[:city] %>
+      </td>
+
+      <td>
+        <div class="row">
+          <div class="col-3">
+            <%= link_to user_path(booking.user_id) do %>
+              <%= image_tag User.find(booking.user_id)[:picture], class: "media-photo media-round img-round" %>
+             <% end %>
+          </div>
+          <div class="col-9">
+           <%= User.find(booking.user_id)[:first_name] %> <%= User.find(booking.user_id)[:last_name] %>
+          </div>
+        </div>
+      </td>
+
+      <td>
+        <%= (booking.date_departure - booking.date_arrival)*Flat.find(booking.flat_id)[:price] %>
+        € total
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+  </table>
+
+
+
+
+
+
