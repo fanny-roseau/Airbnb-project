@@ -10,6 +10,11 @@
          <div class="flat-card-text">
           <p><strong><%= @flat.title %></strong></p>
           <p><strong>Propriété : </strong><%= @flat.property_type %> - <%= @flat.room_type %></p>
+          <p><strong> Nombre de personnes : </strong> <%= @flat.capacity %></p>
+          <p><strong> Adresse : </strong><%= @flat.street %> </p>
+          <p><strong> Ville : </strong><%= @flat.zip_code %> <%= @flat.city %></p>
+          <p><%= @flat.presentation %></p>
+          <p><strong> Tarif : </strong><%= @flat.price %> € / nuit</p>
         </div>
       </li>
     </div>
@@ -28,34 +33,14 @@
         </div>
 
       <div class="panel-light">
-        <%= simple_form_for([@flat.user_id, @flat, @flat.bookings.build]) do |f| %>
-          <div class="col-xs-4">
-<<<<<<< HEAD
-            <label for="name">Arrivée</label>
-            <input placeholder="Arrivée" type="text" data-provide='datepicker' name="date_arrival" id="date_arrival" class="form-control">
-          </div>
-          <div class="col-xs-4">
-            <label for="name">Départ</label>
-            <input placeholder="Départ" type="text" data-provide='datepicker' name="date_departure" class="form-control">
-=======
-            <%= f.input :date_arrival, label:"Arrivée" %>
-          </div>
-          <div class="col-xs-4">
-            <%= f.input :date_departure, label:"Départ" %>
->>>>>>> 5fca56385d9d7e014c132ca4ddd429cf449dba6b
-          </div>
+        <%= simple_form_for([@flat.user, @flat, @flat.bookings.build]) do |f| %>
+          <%= f.input :date_arrival, as: :string, input_html: { class: "datepicker" } %>
+          <%= f.input :date_departure, as: :string, input_html: { class: "datepicker" } %>
+
           <div class="col-xs-4">
             <%= f.input :people_number, placeholder:"Voyageurs", label:"Voyageurs" %>
           </div>
           <div class="col-xs-12">
-            <tr>
-              <td>
-                <%= @flat.price %>€ x 3 nuits
-              </td>
-              <td >
-                = <%= @flat.price * 3 %> euros
-              </td>
-            </tr>
             </div>
           <div class="col-xs-12">
             <%= f.button :submit, class: "btn btn-primary btn-block", value: "Réservez l'appartement" %>

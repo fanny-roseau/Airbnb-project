@@ -22,5 +22,5 @@
 //= require bootstrap-datepicker/locales/bootstrap-datepicker.fr.js
 
   $(document).ready(function(){
-    $('.datepicker').datepicker();
+    $('.datepicker').datepicker({ format: "dd/mm/yyyy"});
   });
