@@ -3,7 +3,7 @@
   height: 450px;
   width: 300px;
   background-color: white;
-  margin: 0 auto;
+  margin: -200px auto;
 }
 
 .sign-up-box {
@@ -11,7 +11,7 @@
   height: 275px;
   width: 215px;
   background-color: white;
-  margin: 0 auto;
+  margin: -200px auto;
 }
 
 .edit-box {
@@ -109,12 +109,11 @@
 .banner-transparent {
   margin-top:-100px;
   background-image: url(surfhouse.jpg);
-  width: 100%;
-  height: 650px;
   background-repeat: no-repeat;
   background-size: cover;
   padding-top:80px;
   z-index:1;
 }
+
 
 
