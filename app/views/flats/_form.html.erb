@@ -3,7 +3,7 @@
 <div class="form-inputs form-flat">
 
      <%= simple_form_for([current_user, @flat],  html: { multipart: true }) do |f| %>
-
+        <%= f.input :title, placeholder: 'Titre', required: true, label: false %>
         <%= f.input :property_type, prompt: "Type de propriété",
             collection: ["Appartement", "Maison"],
             required: true, autofocus: true, label: false %>

@@ -15,10 +15,13 @@
 
   .flat-card {
     background-color: white;
-    width: 440px;
-    padding: 20px;
+    width: 347px;
     margin: 20px;
     display: inline-block;
+  }
+
+  .flat-card-text {
+    padding: 20px;
   }
 
 body {
