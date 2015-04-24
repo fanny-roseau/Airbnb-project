@@ -5,11 +5,11 @@
           <%= image_tag @user.picture.url(:medium), class: "img-size" %> <br><br>
         <% else %>
           <%= image_tag "http://placehold.it/300x300"%> <br><br>
-          <%= link_to "Modifier le profil", edit_user_registration_path(current_user)%>
       <% end %>
+      <%= link_to "Modifier le profil", edit_user_registration_path(current_user)%>
     </div>
 
-    <div div class="col-md-8">
+    <div class="col-md-8">
       <h2>Bonjour, je m'appelle <%= @user.first_name %> !</h2>
       <br>
       <p> <strong>Membre depuis : </strong> <%= @user.created_at %> </p>

@@ -10,8 +10,11 @@
               <% @flats.each do |flat| %>
               <div class="col-xs-12 col-md-4">
                 <li class = "flat-card">
-
-                  <%= image_tag flat.picture.url(:medium) %>
+                  <% if flat.picture.exists? %>
+                      <%= image_tag flat.picture.url(:medium) %>
+                  <% else %>
+                      <%= image_tag "defopic.png"%>
+                  <% end %>
                     <div class="flat-card-text">
                       <p><strong><%= flat.title %> - <%= flat.price %>€/nuit</strong></p>
                       <p><%= flat.city %></p>

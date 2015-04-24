@@ -54,7 +54,7 @@
       </td>
 
       <td>
-        <%= (booking.date_departure - booking.date_arrival)*Flat.find(booking.flat_id)[:price] %>
+        <%= (booking.date_departure - booking.date_arrival) * Flat.find(booking.flat_id)[:price] %>
         € total
       </td>
     </tr>

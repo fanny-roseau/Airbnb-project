@@ -1,3 +1,18 @@
+.box-left   {
+  width: 760px;
+  float: left;
+}
+
+.box-right  {
+  width: 450px;
+  float: right;
+}
+
+.box  {
+  width : 1210px;
+  margin: 0 auto;
+}
+
 .form-flat {
   padding: 20px;
   width: 440px;
@@ -5,36 +20,34 @@
   margin: 0 auto;
 }
 
-
 #myflats  {
   li {
     list-style-type: none;
   }
-
 }
 
-  .flat-card {
-    background-color: white;
-    width: 347px;
-    margin: 20px;
-    display: inline-block;
-    box-shadow: 1px 1px 3px grey;
-  }
+.flat-card {
+  background-color: white;
+  width: 347px;
+  margin: 20px;
+  display: inline-block;
+  box-shadow: 1px 1px 3px grey;
+}
 
-  .flat-card-text {
-    padding: 20px;
-  }
+.flat-card-text {
+  padding: 20px;
+}
 
-  .separation {
-    background-color: #48A3A9;
-    padding: 1px;
-    color: white;
+.separation {
+  background-color: #D3D3D3;
+  padding: 1px;
+  color: white;
 
-    h1 {
+  h1 {
       font-size: 36px;
       line-height: 21px;
     }
-  }
+}
 
 body {
   padding-top: 60px;
