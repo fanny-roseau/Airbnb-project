@@ -21,8 +21,8 @@
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li>
-            <%= link_to "#" do %>
-              <i class="fa fa-envelope-o"></i> <%= t(".messages", default: "Messages") %>
+            <%= link_to user_bookings_path(current_user) do %>
+              <i class="fa fa-envelope-o"></i> <%= t(".messages", default: "Mes réservations") %>
             <% end %>
           </li>
           <li class="dropdown">

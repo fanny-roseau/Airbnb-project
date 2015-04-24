@@ -18,18 +18,15 @@
         </div>
 
       <div class="panel-light">
-        <%= form_tag(new_user_booking_path, method: :get) do %>
+        <%= simple_form_for([@flat.user_id, @flat, @flat.bookings.build]) do |f| %>
           <div class="col-xs-4">
-            <label for="name">Arrivée</label>
-            <input placeholder="Arrivée" type="text" onfocus="(this.type='date')" name="date_arrival" id="date_arrival" class="form-control">
+            <%= f.input :date_arrival, label:"Arrivée" %>
           </div>
           <div class="col-xs-4">
-            <label for="name">Départ</label>
-            <input placeholder="Départ" type="text" onfocus="(this.type='date')" name="date_departure" class="form-control">
+            <%= f.input :date_departure, label:"Départ" %>
           </div>
           <div class="col-xs-4">
-            <label for="name">Voyageurs</label>
-            <input placeholder="Voyageurs" type="text" onfocus="(this.type='number')" name="people_number" class="form-control" min="0" step="1">
+            <%= f.input :people_number, placeholder:"Voyageurs", label:"Voyageurs" %>
           </div>
           <div class="col-xs-12">
             <tr>
@@ -42,13 +39,10 @@
             </tr>
             </div>
           <div class="col-xs-12">
-             <input class="btn btn-primary" type="submit" value="Réservez l'appartement">
+            <%= f.button :submit, class: "btn btn-primary btn-block", value: "Réservez l'appartement" %>
           </div>
         <% end %>
-
-
-
-
+      </div>
 
 
 
