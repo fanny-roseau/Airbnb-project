@@ -4,7 +4,11 @@
       <h1 class = "text-center">Results of your research</h1>
         <% @flats.each do |flat| %>
           <div class = "flat-card">
-            <%= image_tag flat.picture.url(:medium) %>
+            <% if flat.picture.exists? %>
+              <%= image_tag flat.picture.url(:medium) %> %
+            <% else %>
+              <%= image_tag "http://placehold.it/353x235"%>
+            <% end %>
             <p><%= link_to flat.presentation, user_flat_path(flat.user_id,flat) %></p>
             <ul class="list-inline">
               <li><%= flat.property_type %></li>
@@ -12,6 +16,21 @@
               <li><%= flat.city %></li>
             </ul>
           </div>
+        <% end %>
+    </div>
+    <div class="col-xs-6">
+      <div id="map" style="width: 100%; height: 600px;"></div>
+        <% content_for(:after_js) do %>
+          <%= javascript_tag do %>
+            $(document).on('ready', function() {
+handler = Gmaps.build('Google');
+              handler.buildMap({ internal: { id: 'map' } }, function(){
+                markers = handler.addMarkers(<%= raw @markers.to_json %>);
+                handler.bounds.extendWith(markers);
+                handler.fitMapToBounds();
+              });
+            })
+          <% end %>
         <% end %>
     </div>
   </div>

@@ -1,8 +1,12 @@
 <div class="container">
   <div class="row">
-    <div <div class="col-md-4">
-      <%= image_tag @user.picture.url(:medium), class: "img-size" %> <br> <br>
-      <%= link_to "Modifier le profil", edit_user_registration_path(current_user)%>
+    <div class="col-md-4">
+      <% if current_user.picture.exists? %>
+          <%= image_tag @user.picture.url(:medium), class: "img-size" %> <br><br>
+        <% else %>
+          <%= image_tag "http://placehold.it/300x300"%> <br><br>
+          <%= link_to "Modifier le profil", edit_user_registration_path(current_user)%>
+      <% end %>
     </div>
 
     <div div class="col-md-8">
