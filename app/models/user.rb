@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:facebook]
 
-  after_create :send_welcome_email
+  # after_create :send_welcome_email
 
   has_attached_file :picture,
     styles: { medium: "300x300!", thumb: "30x30!" }
