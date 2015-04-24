@@ -1,7 +1,8 @@
 class Flat < ActiveRecord::Base
   belongs_to :user
-  has_many :users, through: :bookings
   has_many :bookings
+
+
 
   geocoded_by :address
   after_validation :geocode, if: ->(flat){ flat.street_changed? || flat.zip_code_changed? || flat.city_changed? }
