@@ -1,3 +1,4 @@
+<div class ="triche"></div>
 <div class = "separation">
   <h1 class = "text-center">Vos résultats de recherche</h1>
 </div>
@@ -10,13 +11,18 @@
           <div class="col-xs-12 col-sm-6">
             <div class = "flat-card">
               <% if flat.picture.exists? %>
-                <%= image_tag flat.picture.url(:medium) %>
+                <%= link_to(user_flat_path(flat.user_id,flat)) do %>
+                  <%= image_tag flat.picture.url(:medium) %>
+                <% end %>
               <% else %>
-                <%= image_tag "defopic.png"%>
+                <%= link_to(user_flat_path(flat.user_id,flat)) do %>
+                  <%= image_tag "defopic.png"%>
+                <% end %>
               <% end %>
               <div class="flat-card-text">
                 <p><strong><%= link_to(flat.title, user_flat_path(flat.user_id,flat)) %></strong> - <%= flat.price %> € / nuit</p>
-                <p><strong>Propriété : </strong><%= flat.property_type %> - <%= flat.room_type %></p>
+                <p><strong><%= flat.city %></strong></p>
+                <p><%= flat.property_type %> - <%= flat.room_type %></p>
               </div>
             </div>
           </div>
