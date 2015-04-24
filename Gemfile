@@ -42,6 +42,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap-sass'
 
+gem 'bootstrap-datepicker-rails'
+
 gem 'font-awesome-sass'
 
 gem 'simple_form'

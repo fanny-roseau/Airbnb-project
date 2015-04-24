@@ -13,13 +13,12 @@
 
 }
 
-
-
   .flat-card {
     background-color: white;
     width: 347px;
     margin: 20px;
     display: inline-block;
+    box-shadow: 1px 1px 3px grey;
   }
 
   .flat-card-text {
@@ -36,7 +35,6 @@
       line-height: 21px;
     }
   }
-
 
 body {
   padding-top: 60px;
