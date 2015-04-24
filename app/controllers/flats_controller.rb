@@ -25,6 +25,7 @@ class FlatsController < ApplicationController
   end
 
   def edit
+    current_user = User.find(params[:user_id])
     @flat = current_user.flats.find(params[:id])
   end
 
