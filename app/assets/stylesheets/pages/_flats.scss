@@ -11,7 +11,9 @@
     list-style-type: none;
   }
 
-  }
+}
+
+
 
   .flat-card {
     background-color: white;
@@ -24,7 +26,18 @@
     padding: 20px;
   }
 
+  .separation {
+    background-color: #48A3A9;
+    padding: 1px;
+    color: white;
+
+    h1 {
+      font-size: 36px;
+      line-height: 21px;
+    }
+  }
+
+
 body {
   padding-top: 60px;
 }
-
