@@ -1,7 +1,10 @@
+<div class = "separation">
+  <h1 class = "text-center">Vos résultats de recherche</h1>
+</div>
 <div class="container">
   <div class="row">
     <div class="col-xs-6">
-      <h1 class = "text-center">Results of your research</h1>
+
         <% @flats.each do |flat| %>
           <div class = "flat-card">
             <% if flat.picture.exists? %>
@@ -10,15 +13,15 @@
               <%= image_tag "defopic.png"%>
             <% end %>
             <div class="flat-card-text">
-              <p><%= link_to(flat.title, user_flat_path(flat.user_id,flat)) %></p>
-              <p><strong><%= flat.title %></strong></p>
+              <p><strong><%= link_to(flat.title, user_flat_path(flat.user_id,flat)) %></strong> - <%= flat.price %> € / nuit</p>
               <p><strong>Propriété : </strong><%= flat.property_type %> - <%= flat.room_type %></p>
             </div>
           </div>
         <% end %>
+
     </div>
     <div class="col-xs-6">
-      <div id="map" style="width: 100%; height: 600px;"></div>
+      <div id="map" style="width: 100%; height: 400px;"></div>
         <% content_for(:after_js) do %>
           <%= javascript_tag do %>
             $(document).on('ready', function() {

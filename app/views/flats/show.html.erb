@@ -1,7 +1,17 @@
+<div = "separation"></div>
+
 <div class="container">
   <div class="row">
 
     <div class="col-xs-9">
+      <li class = "flat-card">
+         <div class="flat-picture" style="background-image: url(<%= asset_path @flat.picture.url(:medium) %>); height: 300px; background-size: cover;">
+                    </div>
+         <div class="flat-card-text">
+          <p><strong><%= @flat.title %></strong></p>
+          <p><strong>Propriété : </strong><%= @flat.property_type %> - <%= @flat.room_type %></p>
+        </div>
+      </li>
     </div>
 
     <div class="col-xs-3">
@@ -21,11 +31,11 @@
         <%= form_tag(new_user_booking_path, method: :get) do %>
           <div class="col-xs-4">
             <label for="name">Arrivée</label>
-            <input placeholder="Arrivée" type="text" onfocus="(this.type='date')" name="date_arrival" id="date_arrival" class="form-control">
+            <input placeholder="Arrivée" type="text" data-provide='datepicker' name="date_arrival" id="date_arrival" class="form-control">
           </div>
           <div class="col-xs-4">
             <label for="name">Départ</label>
-            <input placeholder="Départ" type="text" onfocus="(this.type='date')" name="date_departure" class="form-control">
+            <input placeholder="Départ" type="text" data-provide='datepicker' name="date_departure" class="form-control">
           </div>
           <div class="col-xs-4">
             <label for="name">Voyageurs</label>
@@ -37,7 +47,7 @@
                 <%= @flat.price %>€ x 3 nuits
               </td>
               <td >
-                <%= @flat.price * 3 %>
+                = <%= @flat.price * 3 %> euros
               </td>
             </tr>
             </div>
